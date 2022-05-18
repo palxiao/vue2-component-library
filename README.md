@@ -6,6 +6,8 @@
 npm run init
 ```
 进入 `bin/script/cp` 修改发布文档的配置，这里使用githubPages演示，docs分支为静态目录
+demo/docs/.vuepress/enhanceApp.js 修改发布路由
+bin/add.js 修改包的作用域
 
 ### Ready
 
