@@ -3,7 +3,7 @@
  * @Date: 2021-12-20 18:38:39
  * @Description: webpack扩展
  * @LastEditors: ShawnPhang
- * @LastEditTime: 2022-05-18 15:34:09
+ * @LastEditTime: 2022-05-18 15:48:52
  * @site: book.palxp.com
  */
 const path = require('path');
@@ -18,7 +18,7 @@ module.exports = {
       link: '/default/'
     }, {
       text: 'Github',
-      link: ''
+      link: 'https://github.com/palxiao/vue2-component-library'
     }],
     sidebar: [{
       title: '组件',
