@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+current_branch="main" # 当前分支
+publish_branch="docs" # 发布分支
+static_root="./" # 静态指定目录
+project_path=$PWD
+project_name="${project_path##*/}" # 当前项目
+cache_dir="_cache_"
+build_script="npm run docs:build"
+set -e
+
+npm run runVersion
+git add .
+git commit -m 'code: build doc. fast'
+
+cd ../
+mkdir ${cache_dir}
+
+cd ${project_name}
+${build_script}
+sleep 1s
+cd demo/docs/.vuepress/dist
+zip -r dist.zip ./*
+mv -f dist.zip ../../../../
+cd ../../../../
+mv -f dist.zip ../${cache_dir}
+
+git checkout ${publish_branch}
+git pull origin ${publish_branch}
+sleep 1s
+mv -f ../${cache_dir}/* ./
+rm -rf ../${cache_dir}
+
+unzip -o -d ${static_root} dist.zip
+rm -rf dist.zip
+
+git add .
+git commit -m 'build components Doc.'
+git push origin ${publish_branch}
+git checkout ${current_branch}
+
+echo -e "\n成功发布\n"
+exit
