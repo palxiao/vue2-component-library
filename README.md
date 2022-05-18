@@ -41,6 +41,10 @@ yarn api / npm run api
 yarn c / yarn commit
 npm run c / npm run commit
 ```
+查看组件库版本记录：
+```
+yarn clog / npm run clog
+```
 
 ### 编译组件
 
