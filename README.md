@@ -1,13 +1,15 @@
 
 # 前端vue2组件库
 
+[在线预览](https://palxiao.github.io/vue2-component-library/)
+
 ### Start
 ```
 npm run init
 ```
 进入 `bin/script/cp` 修改发布文档的配置，这里使用githubPages演示，docs分支为静态目录
 demo/docs/.vuepress/enhanceApp.js 修改发布路由
-bin/add.js 修改包的作用域
+bin/add.js 修改你的包作用域
 
 ### Ready
 
@@ -17,7 +19,7 @@ bin/add.js 修改包的作用域
 nrm use npm
 ```
 
-### Run
+### 开始创建你的组件
 
 增加组件:
 
@@ -32,16 +34,15 @@ npm run add
 yarn dev / npm run dev
 ```
 
-自动生成组件api文档
+修改组件后运行命令自动生成api文档
 ```
 yarn api / npm run api
 ```
 
-### 按规范提交你的代码
+### 提交你的代码
 
 ```
-yarn c / yarn commit
-npm run c / npm run commit
+yarn c / yarn commit / npm run c
 ```
 查看组件库版本记录：
 ```
@@ -56,6 +57,6 @@ yarn clog / npm run clog
 
 ```npm run lp```
 
-### 编译并发布文档
+### 编译并发布在线文档
 
 ```yarn docs:deploy / npm run docs:deploy```
